@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Personal Assistant for Business</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand-card">
+                <div class="brand-mark">AI</div>
+                <div>
+                    <h1>Business Assistant</h1>
+                    <p>Created by Shanmugapriyan J — Smart AI for modern teams.</p>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-item active" data-view="chat-view">Chat Assistant</button>
+                <button class="nav-item" data-view="email-view">Email Generator</button>
+                <button class="nav-item" data-view="product-view">Product Description Generator</button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <label class="theme-toggle" for="theme-switch">
+                    <span>Dark mode</span>
+                    <input id="theme-switch" type="checkbox">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </aside>
+
+        <main class="main-panel">
+            <section id="chat-view" class="view-panel active">
+                <div class="panel-header">
+                    <div>
+                        <p class="eyebrow">Assistant</p>
+                        <h2>Business Chat Assistant</h2>
+                    </div>
+                    <p class="panel-copy">Ask for customer support replies, internal updates, sales messaging, and more.</p>
+                </div>
+
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message bot">
+                        <div class="message-bubble">
+                            Hello! I'm your AI Business Assistant, created by Shanmugapriyan J. I can help with business communication, email writing, and product content. What would you like to create today?
+                        </div>
+                    </div>
+                </div>
+
+                <form id="chat-form" class="composer">
+                    <input id="chat-input" type="text" placeholder="Type your business request here..." autocomplete="off">
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+
+            <section id="email-view" class="view-panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="eyebrow">Emails</p>
+                        <h2>Email Generator</h2>
+                    </div>
+                    <p class="panel-copy">Generate polished business emails for outreach, replies, and proposals.</p>
+                </div>
+
+                <form id="email-form" class="tool-form">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="email-type">Email type</label>
+                            <select id="email-type">
+                                <option value="formal email">Formal Email</option>
+                                <option value="reply email">Reply Email</option>
+                                <option value="business proposal">Business Proposal</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="email-tone">Tone</label>
+                            <select id="email-tone">
+                                <option value="professional">Professional</option>
+                                <option value="friendly">Friendly</option>
+                                <option value="confident">Confident</option>
+                                <option value="persuasive">Persuasive</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="email-prompt">What should the email say?</label>
+                        <textarea id="email-prompt" rows="7" placeholder="Example: Write a formal follow-up email to a client after a demo call. Mention pricing discussion, next steps, and invite questions."></textarea>
+                    </div>
+
+                    <button type="submit" class="primary-btn">Generate Email</button>
+                </form>
+
+                <div id="email-output" class="output-card empty-state">
+                    Your generated email will appear here.
+                </div>
+            </section>
+
+            <section id="product-view" class="view-panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="eyebrow">Marketing</p>
+                        <h2>Product Description Generator</h2>
+                    </div>
+                    <p class="panel-copy">Turn product details into compelling business-ready marketing copy.</p>
+                </div>
+
+                <form id="product-form" class="tool-form">
+                    <div class="field">
+                        <label for="product-name">Product name</label>
+                        <input id="product-name" type="text" placeholder="Example: Smart Inventory Hub">
+                    </div>
+
+                    <div class="field">
+                        <label for="product-features">Key features</label>
+                        <textarea id="product-features" rows="7" placeholder="Example: Real-time stock tracking, low inventory alerts, simple dashboard, supplier reports, mobile access"></textarea>
+                    </div>
+
+                    <button type="submit" class="primary-btn">Generate Description</button>
+                </form>
+
+                <div id="product-output" class="output-card empty-state">
+                    Your generated product description will appear here.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <template id="typing-template">
+        <div class="message bot typing-message">
+            <div class="message-bubble typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </template>
+
+    <script src="/script.js"></script>
+</body>
+</html>
